@@ -1,0 +1,66 @@
+---
+version: "2.1"
+services:
+
+  influxdb:
+    image: "influxdb:${INFLUXDB_VERSION}"
+    container_name: influxdb
+    ports:
+      - "${HOST_INFLUXDB_HTTP_PORT}:${INFLUXDB_HTTP_PORT}"
+    environment:
+      - INFLUXDB_ADMIN_USER=${INFLUXDB_USER}
+      - INFLUXDB_ADMIN_PASSWORD=${INFLUXDB_PASSWORD}
+      - INFLUXDB_DATA_ENGINE=tsm1
+      - INFLUXDB_REPORTING_DISABLED=false
+      - INFLUXDB_DB=${INFLUXDB_DB}
+    healthcheck:
+      test: ["CMD", "curl", "-G", "http://localhost:${INFLUXDB_HTTP_PORT}/ping"]
+      interval: 5s
+      retries: 10
+    # Internal network for the containers
+    networks:
+      - 'docker_stack'
+
+  grafana:
+    image: "grafana/grafana:${GRAFANA_VERSION}"
+    container_name: grafana
+    # NOTE: Port has to match with setting in custom.ini file
+    ports:
+      - "${HOST_GRAFANA_HTTP_PORT}:${GRAFANA_HTTP_PORT}"
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+      - GF_INSTALL_PLUGINS=grafana-clock-panel,briangann-gauge-panel,natel-plotly-panel,grafana-simple-json-datasource
+      # influxdb server info is used for grafana datasource configuration
+      - INFLUXDB_USER=${INFLUXDB_USER}
+      - INFLUXDB_PASSWORD=${INFLUXDB_PASSWORD}
+      - INFLUXDB_DATA_PORT=${INFLUXDB_HTTP_PORT}
+      - INFLUXDB_URL=http://influxdb:${INFLUXDB_HTTP_PORT}
+      - INFLUXDB_DB=${INFLUXDB_DB}
+    volumes:
+      # datasource - All pre-configured datasources will go as an entry in /provisioning/datasources/datasource.yml
+      - "./config/provisioning:/etc/grafana/provisioning"
+      # grafana server configuration file
+      - "./config/grafana/custom.ini:/etc/grafana/custom.ini"
+      # dashboards - All pre-configured dashboards will go here as a .json file
+      - "./config/grafana/dashboards:/var/lib/grafana/dashboards"
+    healthcheck:
+      test: ["CMD", "curl", "-G", "http://localhost:${GRAFANA_HTTP_PORT}/api/health"]
+      interval: 5s
+      retries: 10
+    # Internal network for the containers
+    networks:
+      - 'docker_stack'
+    # Dependencies for this service
+    depends_on:
+      - influxdb
+
+# network connectors used in the docker env
+networks:
+  docker_stack:
+      driver: bridge
+      ipam:
+        driver: default
+        config:
+        # default docker compose subnet(172.177.0.0/16) sometimes conflicts with corp
+        - subnet: 192.168.1.0/24

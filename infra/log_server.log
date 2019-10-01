@@ -1,0 +1,438 @@
+Creating network "infra_docker_stack" with driver "bridge"
+Creating influxdb ... 
+[1A[2KCreating influxdb ... [32mdone[0m[1BCreating grafana  ... 
+[1A[2KCreating grafana  ... [32mdone[0m[1BAttaching to influxdb, grafana
+[33mgrafana     |[0m installing grafana-clock-panel @ 1.0.3
+[33mgrafana     |[0m from: https://grafana.com/api/plugins/grafana-clock-panel/versions/1.0.3/download
+[33mgrafana     |[0m into: /var/lib/grafana/plugins
+[33mgrafana     |[0m 
+[33mgrafana     |[0m ✔ Installed grafana-clock-panel successfully 
+[33mgrafana     |[0m 
+[33mgrafana     |[0m Restart grafana after installing plugins . <service grafana-server restart>
+[33mgrafana     |[0m 
+[33mgrafana     |[0m installing briangann-gauge-panel @ 0.0.6
+[33mgrafana     |[0m from: https://grafana.com/api/plugins/briangann-gauge-panel/versions/0.0.6/download
+[33mgrafana     |[0m into: /var/lib/grafana/plugins
+[33mgrafana     |[0m 
+[36minfluxdb    |[0m influxdb init process in progress...
+[36minfluxdb    |[0m ts=2019-10-01T00:15:32.899894Z lvl=info msg="InfluxDB starting" log_id=0IDAat8l000 version=1.7.7 branch=1.7 commit=f8fdf652f348fc9980997fe1c972e2b79ddd13b0
+[36minfluxdb    |[0m ts=2019-10-01T00:15:32.900495Z lvl=info msg="Go runtime" log_id=0IDAat8l000 version=go1.11 maxprocs=2
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.009654Z lvl=info msg="Using data dir" log_id=0IDAat8l000 service=store path=/var/lib/influxdb/data
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.010273Z lvl=info msg="Compaction settings" log_id=0IDAat8l000 service=store max_concurrent_compactions=1 throughput_bytes_per_second=50331648 throughput_bytes_per_second_burst=50331648
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.010406Z lvl=info msg="Open store (start)" log_id=0IDAat8l000 service=store trace_id=0IDAat_W000 op_name=tsdb_open op_event=start
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.011360Z lvl=info msg="Open store (end)" log_id=0IDAat8l000 service=store trace_id=0IDAat_W000 op_name=tsdb_open op_event=end op_elapsed=0.958ms
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.011830Z lvl=info msg="Opened service" log_id=0IDAat8l000 service=subscriber
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.012247Z lvl=info msg="Starting monitor service" log_id=0IDAat8l000 service=monitor
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.012794Z lvl=info msg="Registered diagnostics client" log_id=0IDAat8l000 service=monitor name=build
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.013295Z lvl=info msg="Registered diagnostics client" log_id=0IDAat8l000 service=monitor name=runtime
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.013570Z lvl=info msg="Registered diagnostics client" log_id=0IDAat8l000 service=monitor name=network
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.013849Z lvl=info msg="Registered diagnostics client" log_id=0IDAat8l000 service=monitor name=system
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.014707Z lvl=info msg="Starting precreation service" log_id=0IDAat8l000 service=shard-precreation check_interval=10m advance_period=30m
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.015296Z lvl=info msg="Starting snapshot service" log_id=0IDAat8l000 service=snapshot
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.015964Z lvl=info msg="Starting continuous query service" log_id=0IDAat8l000 service=continuous_querier
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.016636Z lvl=info msg="Starting HTTP service" log_id=0IDAat8l000 service=httpd authentication=false
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.014743Z lvl=info msg="Storing statistics" log_id=0IDAat8l000 service=monitor db_instance=_internal db_rp=monitor interval=10s
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.017372Z lvl=info msg="opened HTTP access log" log_id=0IDAat8l000 service=httpd path=stderr
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.018285Z lvl=info msg="Listening on HTTP" log_id=0IDAat8l000 service=httpd addr=127.0.0.1:8086 https=false
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.018483Z lvl=info msg="Starting retention policy enforcement service" log_id=0IDAat8l000 service=retention check_interval=30m
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.021635Z lvl=info msg="Listening for signals" log_id=0IDAat8l000
+[36minfluxdb    |[0m ts=2019-10-01T00:15:33.021755Z lvl=info msg="Sending usage statistics to usage.influxdata.com" log_id=0IDAat8l000
+[33mgrafana     |[0m ✔ Installed briangann-gauge-panel successfully 
+[33mgrafana     |[0m 
+[33mgrafana     |[0m Restart grafana after installing plugins . <service grafana-server restart>
+[33mgrafana     |[0m 
+[33mgrafana     |[0m installing natel-plotly-panel @ 0.0.6
+[33mgrafana     |[0m from: https://grafana.com/api/plugins/natel-plotly-panel/versions/0.0.6/download
+[33mgrafana     |[0m into: /var/lib/grafana/plugins
+[33mgrafana     |[0m 
+[33mgrafana     |[0m ✔ Installed natel-plotly-panel successfully 
+[33mgrafana     |[0m 
+[33mgrafana     |[0m Restart grafana after installing plugins . <service grafana-server restart>
+[33mgrafana     |[0m 
+[33mgrafana     |[0m installing grafana-simple-json-datasource @ 1.4.0
+[33mgrafana     |[0m from: https://grafana.com/api/plugins/grafana-simple-json-datasource/versions/1.4.0/download
+[33mgrafana     |[0m into: /var/lib/grafana/plugins
+[33mgrafana     |[0m 
+[33mgrafana     |[0m ✔ Installed grafana-simple-json-datasource successfully 
+[33mgrafana     |[0m 
+[33mgrafana     |[0m Restart grafana after installing plugins . <service grafana-server restart>
+[33mgrafana     |[0m 
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Starting Grafana" logger=server version=6.3.4 commit=a557646 branch=HEAD compiled=2019-08-19T14:28:51+0000
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Config loaded from" logger=settings file=/usr/share/grafana/conf/defaults.ini
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Config loaded from" logger=settings file=/etc/grafana/grafana.ini
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Config overridden from command line" logger=settings arg="default.paths.data=/var/lib/grafana"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Config overridden from command line" logger=settings arg="default.paths.logs=/var/log/grafana"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Config overridden from command line" logger=settings arg="default.paths.plugins=/var/lib/grafana/plugins"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Config overridden from command line" logger=settings arg="default.paths.provisioning=/etc/grafana/provisioning"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Config overridden from command line" logger=settings arg="default.log.mode=console"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Config overridden from Environment variable" logger=settings var="GF_PATHS_DATA=/var/lib/grafana"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Config overridden from Environment variable" logger=settings var="GF_PATHS_LOGS=/var/log/grafana"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Config overridden from Environment variable" logger=settings var="GF_PATHS_PLUGINS=/var/lib/grafana/plugins"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Config overridden from Environment variable" logger=settings var="GF_PATHS_PROVISIONING=/etc/grafana/provisioning"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Config overridden from Environment variable" logger=settings var="GF_SECURITY_ADMIN_USER=admin"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Config overridden from Environment variable" logger=settings var="GF_SECURITY_ADMIN_PASSWORD=*********"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Path Home" logger=settings path=/usr/share/grafana
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Path Data" logger=settings path=/var/lib/grafana
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Path Logs" logger=settings path=/var/log/grafana
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Path Plugins" logger=settings path=/var/lib/grafana/plugins
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Path Provisioning" logger=settings path=/etc/grafana/provisioning
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="App mode production" logger=settings
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Initializing SqlStore" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Connecting to DB" logger=sqlstore dbtype=sqlite3
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Starting DB migration" logger=migrator
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create migration_log table"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create user table"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="add unique index user.login"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="add unique index user.email"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="drop index UQE_user_login - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="drop index UQE_user_email - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Rename table user to user_v1 - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create user table v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create index UQE_user_login - v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create index UQE_user_email - v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="copy data_source v1 to v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Drop old table user_v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add column help_flags1 to user table"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Update user table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add last_seen_at column to user"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add missing user data"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add is_disabled column to user"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create temp user table v1-7"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create index IDX_temp_user_email - v1-7"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create index IDX_temp_user_org_id - v1-7"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create index IDX_temp_user_code - v1-7"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create index IDX_temp_user_status - v1-7"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Update temp_user table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create star table"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="add unique index star.user_id_dashboard_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create org table v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create index UQE_org_name - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create org_user table v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create index IDX_org_user_org_id - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create index UQE_org_user_org_id_user_id - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Update org table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Update org_user table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Migrate all Read Only Viewers to Viewers"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create dashboard table"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="add index dashboard.account_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="add unique index dashboard_account_id_slug"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create dashboard_tag table"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="add unique index dashboard_tag.dasboard_id_term"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="drop index UQE_dashboard_tag_dashboard_id_term - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Rename table dashboard to dashboard_v1 - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create dashboard v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create index IDX_dashboard_org_id - v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="create index UQE_dashboard_org_id_slug - v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="copy dashboard v1 to v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="drop table dashboard_v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="alter dashboard.data to mediumtext v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add column updated_by in dashboard - v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add column created_by in dashboard - v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add column gnetId in dashboard"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add index for gnetId in dashboard"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add column plugin_id in dashboard"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add index for plugin_id in dashboard"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add index for dashboard_id in dashboard_tag"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Update dashboard table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Update dashboard_tag table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add column folder_id in dashboard"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add column isFolder in dashboard"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add column has_acl in dashboard"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add column uid in dashboard"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Update uid column values in dashboard"
+[33mgrafana     |[0m t=2019-10-01T00:15:34+0000 lvl=info msg="Executing migration" logger=migrator id="Add unique index dashboard_org_id_uid"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Remove unique index org_id_slug"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update dashboard title length"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add unique index for dashboard_org_id_title_folder_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create dashboard_provisioning"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Rename table dashboard_provisioning to dashboard_provisioning_tmp_qwerty - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create dashboard_provisioning v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create index IDX_dashboard_provisioning_dashboard_id - v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create index IDX_dashboard_provisioning_dashboard_id_name - v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="copy dashboard_provisioning v1 to v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="drop dashboard_provisioning_tmp_qwerty"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add check_sum column"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create data_source table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index data_source.account_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add unique index data_source.account_id_name"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="drop index IDX_data_source_account_id - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="drop index UQE_data_source_account_id_name - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Rename table data_source to data_source_v1 - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create data_source table v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create index IDX_data_source_org_id - v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create index UQE_data_source_org_id_name - v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="copy data_source v1 to v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Drop old table data_source_v1 #2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add column with_credentials"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add secure json data column"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update data_source table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update initial version to 1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add read_only data column"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Migrate logging ds to loki ds"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update json_data with nulls"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create api_key table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index api_key.account_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index api_key.key"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index api_key.account_id_name"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="drop index IDX_api_key_account_id - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="drop index UQE_api_key_key - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="drop index UQE_api_key_account_id_name - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Rename table api_key to api_key_v1 - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create api_key table v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create index IDX_api_key_org_id - v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create index UQE_api_key_key - v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create index UQE_api_key_org_id_name - v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="copy api_key v1 to v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Drop old table api_key_v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update api_key table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add expires to api_key table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create dashboard_snapshot table v4"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="drop table dashboard_snapshot_v4 #1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create dashboard_snapshot table v5 #2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create index UQE_dashboard_snapshot_key - v5"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create index UQE_dashboard_snapshot_delete_key - v5"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create index IDX_dashboard_snapshot_user_id - v5"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="alter dashboard_snapshot to mediumtext v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update dashboard_snapshot table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add column external_delete_url to dashboard_snapshots table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create quota table v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create index UQE_quota_org_id_user_id_target - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update quota table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create plugin_setting table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create index UQE_plugin_setting_org_id_plugin_id - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add column plugin_version to plugin_settings"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update plugin_setting table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create session table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Drop old table playlist table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Drop old table playlist_item table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create playlist table v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create playlist item table v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update playlist table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update playlist_item table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="drop preferences table v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="drop preferences table v3"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create preferences table v3"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update preferences table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add column team_id in preferences"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update team_id column values in preferences"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create alert table v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index alert org_id & id "
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index alert state"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index alert dashboard_id"
+[36minfluxdb    |[0m [httpd] 127.0.0.1 - - [01/Oct/2019:00:15:35 +0000] "GET /ping HTTP/1.1" 204 0 "-" "InfluxDBShell/1.7.7" 96cc73b7-e3e0-11e9-8001-0242c0a80102 165
+[36minfluxdb    |[0m ts=2019-10-01T00:15:35.372307Z lvl=info msg="Executing query" log_id=0IDAat8l000 service=query query="CREATE DATABASE Sample_Data"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Create alert_rule_tag table v1"
+[36minfluxdb    |[0m [httpd] 127.0.0.1 - - [01/Oct/2019:00:15:35 +0000] "POST /query?chunked=true&db=&epoch=ns&q=CREATE+DATABASE+Sample_Data HTTP/1.1" 200 57 "-" "InfluxDBShell/1.7.7" 96cd094c-e3e0-11e9-8002-0242c0a80102 5440
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add unique index alert_rule_tag.alert_id_tag_id"
+[36minfluxdb    |[0m /init-influxdb.sh: ignoring /docker-entrypoint-initdb.d/*
+[36minfluxdb    |[0m 
+[36minfluxdb    |[0m ts=2019-10-01T00:15:35.384038Z lvl=info msg="Signal received, initializing clean shutdown..." log_id=0IDAat8l000
+[36minfluxdb    |[0m ts=2019-10-01T00:15:35.384090Z lvl=info msg="Waiting for clean shutdown..." log_id=0IDAat8l000
+[36minfluxdb    |[0m ts=2019-10-01T00:15:35.384176Z lvl=info msg="Listener closed" log_id=0IDAat8l000 service=snapshot
+[36minfluxdb    |[0m ts=2019-10-01T00:15:35.384252Z lvl=info msg="Shutting down monitor service" log_id=0IDAat8l000 service=monitor
+[36minfluxdb    |[0m ts=2019-10-01T00:15:35.385317Z lvl=info msg="Terminating precreation service" log_id=0IDAat8l000 service=shard-precreation
+[36minfluxdb    |[0m ts=2019-10-01T00:15:35.385387Z lvl=info msg="Terminating continuous query service" log_id=0IDAat8l000 service=continuous_querier
+[36minfluxdb    |[0m ts=2019-10-01T00:15:35.385490Z lvl=info msg="Closing retention policy enforcement service" log_id=0IDAat8l000 service=retention
+[36minfluxdb    |[0m ts=2019-10-01T00:15:35.385564Z lvl=info msg="Closed service" log_id=0IDAat8l000 service=subscriber
+[36minfluxdb    |[0m ts=2019-10-01T00:15:35.385760Z lvl=info msg="Server shutdown completed" log_id=0IDAat8l000
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create alert_notification table v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add column is_default"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add column frequency"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add column send_reminder"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add column disable_resolve_message"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index alert_notification org_id & name"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update alert table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update alert_notification table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create notification_journal table v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index notification_journal org_id & alert_id & notifier_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="drop alert_notification_journal"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create alert_notification_state table v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index alert_notification_state org_id & alert_id & notifier_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add for to alert table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add column uid in alert_notification"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update uid column values in alert_notification"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add unique index alert_notification_org_id_uid"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Remove unique index org_id_name"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Drop old annotation table v4"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create annotation table v5"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index annotation 0 v3"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index annotation 1 v3"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index annotation 2 v3"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index annotation 3 v3"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index annotation 4 v3"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update annotation table charset"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add column region_id to annotation table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Drop category_id index"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add column tags to annotation table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Create annotation_tag table v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add unique index annotation_tag.annotation_id_tag_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Update alert annotations and set TEXT to empty"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add created time to annotation table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add updated time to annotation table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add index for created in annotation table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add index for updated in annotation table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Convert existing annotations from seconds to milliseconds"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create test_data table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create dashboard_version table v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index dashboard_version.dashboard_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add unique index dashboard_version.dashboard_id and dashboard_version.version"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Set dashboard version to 1 where 0"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="save existing dashboard data in dashboard_version table v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="alter dashboard_version.data to mediumtext v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create team table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index team.org_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add unique index team_org_id_name"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create team member table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index team_member.org_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add unique index team_member_org_id_team_id_user_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add column email to team table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add column external to team_member table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add column permission to team_member table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create dashboard acl table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index dashboard_acl_dashboard_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add unique index dashboard_acl_dashboard_id_user_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add unique index dashboard_acl_dashboard_id_team_id"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="save default acl rules in dashboard_acl table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create tag table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index tag.key_value"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create login attempt table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index login_attempt.username"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="drop index IDX_login_attempt_username - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Rename table login_attempt to login_attempt_tmp_qwerty - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create login_attempt v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create index IDX_login_attempt_username - v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="copy login_attempt v1 to v2"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="drop login_attempt_tmp_qwerty"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create user auth table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create index IDX_user_auth_auth_module_auth_id - v1"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="alter user_auth.auth_id to length 190"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add OAuth access token to user_auth"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add OAuth refresh token to user_auth"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add OAuth token type to user_auth"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add OAuth expiry to user_auth"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="Add index to user_id column in user_auth"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create server_lock table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add index server_lock.operation_uid"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create user auth token table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add unique index user_auth_token.auth_token"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add unique index user_auth_token.prev_auth_token"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="create cache_data table"
+[33mgrafana     |[0m t=2019-10-01T00:15:35+0000 lvl=info msg="Executing migration" logger=migrator id="add unique index cache_data.cache_key"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Created default admin" logger=sqlstore user=admin
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing HTTPServer" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing InternalMetricsService" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing RemoteCache" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing QuotaService" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing PluginManager" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Starting plugin search" logger=plugins
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Registering plugin" logger=plugins name="D3 Gauge"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Registering plugin" logger=plugins name=Clock
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Registering plugin" logger=plugins name=SimpleJson
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Registering plugin" logger=plugins name=Plotly
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing RenderingService" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing AlertEngine" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing DatasourceCacheService" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing HooksService" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing LoginService" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing SearchService" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing ServerLockService" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing TracingService" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing UsageStatsService" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing UserAuthTokenService" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing CleanUpService" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing NotificationService" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing provisioningServiceImpl" logger=server
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=warn msg="[Deprecated] the use of password field is deprecated. Please use secureJsonData.password" logger=provisioning.datasources datasource name=influxdb_sample_datasource
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="inserting datasource from configuration " logger=provisioning.datasources name=influxdb_sample_datasource
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=eror msg="Can't read alert notification provisioning files from directory" logger=provisioning.notifiers path=/etc/grafana/provisioning/notifiers error="open /etc/grafana/provisioning/notifiers: no such file or directory"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Initializing Stream Manager"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="HTTP Server Listen" logger=http.server address=0.0.0.0:3000 protocol=http subUrl= socket=
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=eror msg="Failed to look up user based on cookie" logger=context error="user token not found"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/api/annotations status=401 remote_addr=192.168.1.1 time_ms=23 size=26 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=eror msg="Failed to look up user based on cookie" logger=context error="user token not found"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/api/datasources/proxy/1/query status=401 remote_addr=192.168.1.1 time_ms=9 size=26 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=eror msg="Failed to look up user based on cookie" logger=context error="user token not found"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/api/datasources/proxy/1/query status=401 remote_addr=192.168.1.1 time_ms=6 size=26 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=eror msg="Failed to look up user based on cookie" logger=context error="user token not found"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/api/datasources/proxy/1/query status=401 remote_addr=192.168.1.1 time_ms=16 size=26 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/api/login/ping status=401 remote_addr=192.168.1.1 time_ms=5 size=26 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=eror msg="Failed to look up user based on cookie" logger=context error="user token not found"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/api/datasources/proxy/1/query status=401 remote_addr=192.168.1.1 time_ms=32 size=26 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/api/login/ping status=401 remote_addr=192.168.1.1 time_ms=2 size=26 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/api/login/ping status=401 remote_addr=192.168.1.1 time_ms=0 size=26 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Successful Logout" logger=http.server User=
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/logout status=302 remote_addr=192.168.1.1 time_ms=0 size=29 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Successful Logout" logger=http.server User=
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/logout status=302 remote_addr=192.168.1.1 time_ms=0 size=29 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Successful Logout" logger=http.server User=
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/logout status=302 remote_addr=192.168.1.1 time_ms=0 size=29 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/api/login/ping status=401 remote_addr=192.168.1.1 time_ms=0 size=26 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/api/login/ping status=401 remote_addr=192.168.1.1 time_ms=0 size=26 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Successful Logout" logger=http.server User=
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/logout status=302 remote_addr=192.168.1.1 time_ms=0 size=29 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Successful Logout" logger=http.server User=
+[33mgrafana     |[0m t=2019-10-01T00:15:36+0000 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/logout status=302 remote_addr=192.168.1.1 time_ms=0 size=29 referer="http://38f9d34de269.ant.amazon.com:3000/d/ZSthk72Wk/sample-data-dashboard?orgId=1&refresh=1s"
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.448613Z lvl=info msg="InfluxDB starting" log_id=0IDAb9v0000 version=1.7.7 branch=1.7 commit=f8fdf652f348fc9980997fe1c972e2b79ddd13b0
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.448676Z lvl=info msg="Go runtime" log_id=0IDAb9v0000 version=go1.11 maxprocs=2
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.550433Z lvl=info msg="Using data dir" log_id=0IDAb9v0000 service=store path=/var/lib/influxdb/data
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.550567Z lvl=info msg="Compaction settings" log_id=0IDAb9v0000 service=store max_concurrent_compactions=1 throughput_bytes_per_second=50331648 throughput_bytes_per_second_burst=50331648
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.550667Z lvl=info msg="Open store (start)" log_id=0IDAb9v0000 service=store trace_id=0IDAbAJW000 op_name=tsdb_open op_event=start
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.551525Z lvl=info msg="Open store (end)" log_id=0IDAb9v0000 service=store trace_id=0IDAbAJW000 op_name=tsdb_open op_event=end op_elapsed=0.295ms
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.552208Z lvl=info msg="Opened service" log_id=0IDAb9v0000 service=subscriber
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.552352Z lvl=info msg="Starting monitor service" log_id=0IDAb9v0000 service=monitor
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.552463Z lvl=info msg="Registered diagnostics client" log_id=0IDAb9v0000 service=monitor name=build
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.552505Z lvl=info msg="Registered diagnostics client" log_id=0IDAb9v0000 service=monitor name=runtime
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.552551Z lvl=info msg="Registered diagnostics client" log_id=0IDAb9v0000 service=monitor name=network
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.552634Z lvl=info msg="Registered diagnostics client" log_id=0IDAb9v0000 service=monitor name=system
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.552686Z lvl=info msg="Starting precreation service" log_id=0IDAb9v0000 service=shard-precreation check_interval=10m advance_period=30m
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.552748Z lvl=info msg="Starting snapshot service" log_id=0IDAb9v0000 service=snapshot
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.552787Z lvl=info msg="Starting continuous query service" log_id=0IDAb9v0000 service=continuous_querier
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.552848Z lvl=info msg="Starting HTTP service" log_id=0IDAb9v0000 service=httpd authentication=false
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.552878Z lvl=info msg="opened HTTP access log" log_id=0IDAb9v0000 service=httpd path=stderr
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.553031Z lvl=info msg="Listening on HTTP" log_id=0IDAb9v0000 service=httpd addr=[::]:8086 https=false
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.553121Z lvl=info msg="Starting retention policy enforcement service" log_id=0IDAb9v0000 service=retention check_interval=30m
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.553031Z lvl=info msg="Storing statistics" log_id=0IDAb9v0000 service=monitor db_instance=_internal db_rp=monitor interval=10s
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.554490Z lvl=info msg="Listening for signals" log_id=0IDAb9v0000
+[36minfluxdb    |[0m ts=2019-10-01T00:15:37.555542Z lvl=info msg="Sending usage statistics to usage.influxdata.com" log_id=0IDAb9v0000
+[36minfluxdb    |[0m [httpd] 192.168.1.1 - - [01/Oct/2019:00:15:38 +0000] "GET /ping HTTP/1.1" 204 0 "-" "curl/7.54.0" 98ab1907-e3e0-11e9-8001-0242c0a80102 327
+[36minfluxdb    |[0m ts=2019-10-01T00:15:39.206179Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="SHOW DATABASES"
+[36minfluxdb    |[0m [httpd] 192.168.1.1 - admin [01/Oct/2019:00:15:39 +0000] "GET /query?q=SHOW+DATABASES HTTP/1.1" 200 115 "-" "python-requests/2.21.0" 99162103-e3e0-11e9-8002-0242c0a80102 2426
+[36minfluxdb    |[0m ts=2019-10-01T00:15:39.211243Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="CREATE DATABASE Sample_Database"
+[36minfluxdb    |[0m [httpd] 192.168.1.1 - admin [01/Oct/2019:00:15:39 +0000] "POST /query?q=CREATE+DATABASE+%22Sample_Database%22 HTTP/1.1" 200 57 "-" "python-requests/2.21.0" 9916f92e-e3e0-11e9-8003-0242c0a80102 3152
+[36minfluxdb    |[0m [httpd] 192.168.1.1 - admin [01/Oct/2019:00:15:40 +0000] "POST /write?db=Sample_Database&precision=ms HTTP/1.1" 204 0 "-" "python-requests/2.21.0" 99b11f8c-e3e0-11e9-8004-0242c0a80102 25364
+[36minfluxdb    |[0m [httpd] 192.168.1.1 - admin [01/Oct/2019:00:15:40 +0000] "POST /write?db=Sample_Database&precision=ms HTTP/1.1" 204 0 "-" "python-requests/2.21.0" 99b57935-e3e0-11e9-8005-0242c0a80102 1601
+[36minfluxdb    |[0m [httpd] 127.0.0.1 - - [01/Oct/2019:00:15:41 +0000] "GET /ping HTTP/1.1" 204 0 "-" "curl/7.52.1" 9a44e25e-e3e0-11e9-8006-0242c0a80102 70
+[36minfluxdb    |[0m [httpd] 192.168.1.1 - admin [01/Oct/2019:00:15:41 +0000] "POST /write?db=Sample_Database&precision=ms HTTP/1.1" 204 0 "-" "python-requests/2.21.0" 9a4f5a2e-e3e0-11e9-8007-0242c0a80102 3120
+[33mgrafana     |[0m t=2019-10-01T00:15:41+0000 lvl=info msg="Successful Login" logger=http.server User=admin@localhost
+[36minfluxdb    |[0m [httpd] 192.168.1.1 - admin [01/Oct/2019:00:15:42 +0000] "POST /write?db=Sample_Database&precision=ms HTTP/1.1" 204 0 "-" "python-requests/2.21.0" 9ae99692-e3e0-11e9-8008-0242c0a80102 12500
+[36minfluxdb    |[0m [httpd] 192.168.1.1 - admin [01/Oct/2019:00:15:43 +0000] "POST /write?db=Sample_Database&precision=ms HTTP/1.1" 204 0 "-" "python-requests/2.21.0" 9b8625bd-e3e0-11e9-8009-0242c0a80102 3647
+[36minfluxdb    |[0m ts=2019-10-01T00:15:43.693816Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="SELECT mean(value) FROM Sample_Database.autogen.\"measurement\" WHERE time >= now() - 6h GROUP BY time(15s)"
+[36minfluxdb    |[0m [httpd] 192.168.1.1, 192.168.1.1,192.168.1.3 - admin [01/Oct/2019:00:15:43 +0000] "GET /query?db=Sample_Database&epoch=ms&q=SELECT+mean%28%22value%22%29+FROM+%22measurement%22+WHERE+time+%3E%3D+now%28%29+-+6h+GROUP+BY+time%2815s%29+fill%28null%29 HTTP/1.1" 200 57 "-" "Grafana/6.3.4" 9bc2f2f9-e3e0-11e9-800a-0242c0a80102 1161
+[36minfluxdb    |[0m [httpd] 192.168.1.1 - admin [01/Oct/2019:00:15:44 +0000] "POST /write?db=Sample_Database&precision=ms HTTP/1.1" 204 0 "-" "python-requests/2.21.0" 9c21a7af-e3e0-11e9-800b-0242c0a80102 5156
+[36minfluxdb    |[0m ts=2019-10-01T00:15:44.609408Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="SELECT high_val, medium_val, low_val FROM Sample_Database.autogen.sample_measurement WHERE time >= now() - 5m"
+[36minfluxdb    |[0m [httpd] 192.168.1.1, 192.168.1.1,192.168.1.3 - admin [01/Oct/2019:00:15:44 +0000] "GET /query?db=Sample_Database&epoch=ms&q=SELECT+%22high_val%22%2C+%22medium_val%22%2C+%22low_val%22+FROM+%22sample_measurement%22+WHERE+time+%3E%3D+now%28%29+-+5m HTTP/1.1" 200 206 "-" "Grafana/6.3.4" 9c4ea3a0-e3e0-11e9-800c-0242c0a80102 861
+[36minfluxdb    |[0m ts=2019-10-01T00:15:44.611342Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="SELECT high_val FROM Sample_Database.autogen.sample_measurement WHERE time >= now() - 5m"
+[36minfluxdb    |[0m [httpd] 192.168.1.1, 192.168.1.1,192.168.1.3 - admin [01/Oct/2019:00:15:44 +0000] "GET /query?db=Sample_Database&epoch=ms&q=SELECT+%22high_val%22+FROM+%22sample_measurement%22+WHERE+time+%3E%3D+now%28%29+-+5m HTTP/1.1" 200 172 "-" "Grafana/6.3.4" 9c4ef731-e3e0-11e9-800d-0242c0a80102 1400
+[36minfluxdb    |[0m ts=2019-10-01T00:15:44.615074Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="SELECT medium_val FROM Sample_Database.autogen.sample_measurement WHERE time >= now() - 5m"
+[36minfluxdb    |[0m [httpd] 192.168.1.1, 192.168.1.1,192.168.1.3 - admin [01/Oct/2019:00:15:44 +0000] "GET /query?db=Sample_Database&epoch=ms&q=SELECT+%22medium_val%22+FROM+%22sample_measurement%22+WHERE+time+%3E%3D+now%28%29+-+5m HTTP/1.1" 200 171 "-" "Grafana/6.3.4" 9c4f85a3-e3e0-11e9-800e-0242c0a80102 2127
+[36minfluxdb    |[0m ts=2019-10-01T00:15:44.627399Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="SELECT low_val FROM Sample_Database.autogen.sample_measurement WHERE time >= now() - 5m"
+[36minfluxdb    |[0m [httpd] 192.168.1.1, 192.168.1.1,192.168.1.3 - admin [01/Oct/2019:00:15:44 +0000] "GET /query?db=Sample_Database&epoch=ms&q=SELECT+%22low_val%22+FROM+%22sample_measurement%22+WHERE+time+%3E%3D+now%28%29+-+5m HTTP/1.1" 200 169 "-" "Grafana/6.3.4" 9c515ae6-e3e0-11e9-800f-0242c0a80102 1814
+[36minfluxdb    |[0m [httpd] 192.168.1.1 - admin [01/Oct/2019:00:15:45 +0000] "POST /write?db=Sample_Database&precision=ms HTTP/1.1" 204 0 "-" "python-requests/2.21.0" 9cbceee9-e3e0-11e9-8010-0242c0a80102 3901
+[36minfluxdb    |[0m ts=2019-10-01T00:15:45.481865Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="SELECT high_val FROM Sample_Database.autogen.sample_measurement WHERE time >= now() - 5m"
+[36minfluxdb    |[0m [httpd] 192.168.1.1, 192.168.1.1,192.168.1.3 - admin [01/Oct/2019:00:15:45 +0000] "GET /query?db=Sample_Database&epoch=ms&q=SELECT+%22high_val%22+FROM+%22sample_measurement%22+WHERE+time+%3E%3D+now%28%29+-+5m HTTP/1.1" 200 180 "-" "Grafana/6.3.4" 9cd3c535-e3e0-11e9-8011-0242c0a80102 851
+[36minfluxdb    |[0m ts=2019-10-01T00:15:45.484539Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="SELECT high_val, medium_val, low_val FROM Sample_Database.autogen.sample_measurement WHERE time >= now() - 5m"
+[36minfluxdb    |[0m [httpd] 192.168.1.1, 192.168.1.1,192.168.1.3 - admin [01/Oct/2019:00:15:45 +0000] "GET /query?db=Sample_Database&epoch=ms&q=SELECT+%22high_val%22%2C+%22medium_val%22%2C+%22low_val%22+FROM+%22sample_measurement%22+WHERE+time+%3E%3D+now%28%29+-+5m HTTP/1.1" 200 216 "-" "Grafana/6.3.4" 9cd3e147-e3e0-11e9-8012-0242c0a80102 2810
+[36minfluxdb    |[0m ts=2019-10-01T00:15:45.488032Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="SELECT medium_val FROM Sample_Database.autogen.sample_measurement WHERE time >= now() - 5m"
+[36minfluxdb    |[0m [httpd] 192.168.1.1, 192.168.1.1,192.168.1.3 - admin [01/Oct/2019:00:15:45 +0000] "GET /query?db=Sample_Database&epoch=ms&q=SELECT+%22medium_val%22+FROM+%22sample_measurement%22+WHERE+time+%3E%3D+now%28%29+-+5m HTTP/1.1" 200 177 "-" "Grafana/6.3.4" 9cd4b5a6-e3e0-11e9-8013-0242c0a80102 1414
+[36minfluxdb    |[0m ts=2019-10-01T00:15:45.495821Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="SELECT low_val FROM Sample_Database.autogen.sample_measurement WHERE time >= now() - 5m"
+[36minfluxdb    |[0m [httpd] 192.168.1.1, 192.168.1.1,192.168.1.3 - admin [01/Oct/2019:00:15:45 +0000] "GET /query?db=Sample_Database&epoch=ms&q=SELECT+%22low_val%22+FROM+%22sample_measurement%22+WHERE+time+%3E%3D+now%28%29+-+5m HTTP/1.1" 200 173 "-" "Grafana/6.3.4" 9cd5e400-e3e0-11e9-8014-0242c0a80102 1018
+[36minfluxdb    |[0m [httpd] 192.168.1.1 - admin [01/Oct/2019:00:15:46 +0000] "POST /write?db=Sample_Database&precision=ms HTTP/1.1" 204 0 "-" "python-requests/2.21.0" 9d577c87-e3e0-11e9-8015-0242c0a80102 3226
+[36minfluxdb    |[0m [httpd] 127.0.0.1 - - [01/Oct/2019:00:15:46 +0000] "GET /ping HTTP/1.1" 204 0 "-" "curl/7.52.1" 9d5d8937-e3e0-11e9-8016-0242c0a80102 60
+[36minfluxdb    |[0m ts=2019-10-01T00:15:46.507237Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="SELECT high_val FROM Sample_Database.autogen.sample_measurement WHERE time >= now() - 5m"
+[36minfluxdb    |[0m [httpd] 192.168.1.1, 192.168.1.1,192.168.1.3 - admin [01/Oct/2019:00:15:46 +0000] "GET /query?db=Sample_Database&epoch=ms&q=SELECT+%22high_val%22+FROM+%22sample_measurement%22+WHERE+time+%3E%3D+now%28%29+-+5m HTTP/1.1" 200 186 "-" "Grafana/6.3.4" 9d6f7ad0-e3e0-11e9-8018-0242c0a80102 5800
+[36minfluxdb    |[0m ts=2019-10-01T00:15:46.508279Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="SELECT medium_val FROM Sample_Database.autogen.sample_measurement WHERE time >= now() - 5m"
+[36minfluxdb    |[0m [httpd] 192.168.1.1, 192.168.1.1,192.168.1.3 - admin [01/Oct/2019:00:15:46 +0000] "GET /query?db=Sample_Database&epoch=ms&q=SELECT+%22medium_val%22+FROM+%22sample_measurement%22+WHERE+time+%3E%3D+now%28%29+-+5m HTTP/1.1" 200 182 "-" "Grafana/6.3.4" 9d706ab0-e3e0-11e9-8019-0242c0a80102 512
+[36minfluxdb    |[0m ts=2019-10-01T00:15:46.509038Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="SELECT low_val FROM Sample_Database.autogen.sample_measurement WHERE time >= now() - 5m"
+[36minfluxdb    |[0m [httpd] 192.168.1.1, 192.168.1.1,192.168.1.3 - admin [01/Oct/2019:00:15:46 +0000] "GET /query?db=Sample_Database&epoch=ms&q=SELECT+%22low_val%22+FROM+%22sample_measurement%22+WHERE+time+%3E%3D+now%28%29+-+5m HTTP/1.1" 200 178 "-" "Grafana/6.3.4" 9d7089ee-e3e0-11e9-801a-0242c0a80102 636
+[36minfluxdb    |[0m ts=2019-10-01T00:15:46.509004Z lvl=info msg="Executing query" log_id=0IDAb9v0000 service=query query="SELECT high_val, medium_val, low_val FROM Sample_Database.autogen.sample_measurement WHERE time >= now() - 5m"
+[36minfluxdb    |[0m [httpd] 192.168.1.1, 192.168.1.1,192.168.1.3 - admin [01/Oct/2019:00:15:46 +0000] "GET /query?db=Sample_Database&epoch=ms&q=SELECT+%22high_val%22%2C+%22medium_val%22%2C+%22low_val%22+FROM+%22sample_measurement%22+WHERE+time+%3E%3D+now%28%29+-+5m HTTP/1.1" 200 225 "-" "Grafana/6.3.4" 9d6e1e7e-e3e0-11e9-8017-0242c0a80102 18316
